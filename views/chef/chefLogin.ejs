@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/assets/uploads/fevicon/fevicon.ico">
+    <title>Chef Panel</title>
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+
+    <!-- Theme Links -->
+    <link href="/assets/front/css/main.css" rel="stylesheet">
+    <link href="/assets/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/pnotify/dist/pnotify-all.css" rel="stylesheet">
+    <style>
+        html {
+          scroll-behavior: smooth;
+        }
+        .theiaStickySidebar:after {content: ""; display: table; clear: both;}
+    </style>
+    
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <!--Header Food Court Navbar Section-->
+        <div class="navbar-wrapper">
+            <nav class="navbar navbar-static-top ct-navbar-statictop navbar-secondary">
+                <div class="container">
+                    <div class="row">
+                        <div class="ct-logo">
+                            <div class="navbar-header ct-toggle2">
+                                <button type="button" class="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#ct-bootstrap-offcanvas">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                </button>
+                                
+                                <!-- <a class="navbar-brand" href="index.html"><img class="img-responsive flogo" src="/assets/uploads/logo/second_site_logo.png" alt="FoodCourt"> -->
+                                <p style="color: white;font-size: 20px;font-weight: 800;">ITM<br> Chef</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ct-navbar">
+                            <div class="navbar-offcanvas navbar-offcanvas-touch navbar-right" id="ct-bootstrap-offcanvas">
+                                <ul class="nav navbar-nav ct-list">
+                              
+                                    <li><a href="/order">Menu</a></li>
+                                    <li><a href="/order/orderCart">Order Summary</a></li>
+                                    <li><a href="contact-us.html">Check Status</a></li>
+                                    <li><a class="btn btn nav-btn" href="javascript:void(0);" onclick="show_popup('login')">Login</a></li>
+                                  
+                                    <li class="hidden-xs">
+                                        <a class="nav-cart" href="menu.html"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        
+                                        <span id="items_cnt" class="fc-count">0</span>
+                                        
+                                        </span> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--Header Close Food Court Navbar Section-->
+    </div>
+    <div class="container">
+        <div style="width: 90%;margin-top: 30px;">
+            <div style="margin-top: 40p;">
+                <center>
+                <select id="categoryid" class="form-control" style="width: 300px;">
+                    <option value="0" selected disabled>Select Category</option>
+                </select>
+                <button id="submit" class="btn btn-primary btn-block" style="width: 300px; margin: 20px;">Submit</button>
+                </center>
+            </div>
+        </div>
+        <br>
+        <br>
+            <div id="orders">
+                    <center>
+                            <h2>Loading....</h2>
+                    </center>
+            </div>
+    </div>
+        <script src="/javascripts/jquery.js"></script>
+        <script src="/javascripts/socket.io-1.3.7.js"></script>
+        <script src="/javascripts/chef/chefLogin.js"></script>
+</body>
+</html>

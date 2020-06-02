@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+    <meta charset ="utf-8">
+    <meta name ="viewport" content="width=device-width, intial-scale=1">
+    <title>ITM CHEF</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+     <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
+     <style>/*
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      General Configurations
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      */
+      * {
+          margin: 0;
+          padding: 0;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+      }
+      html{
+          font: normal 16px sans-serif;
+          color: #555;
+      }
+      ul, nav{
+          list-style: none;
+      }
+      /*nav-bar style*/
+      nav{
+          list-style: none;
+      }
+      a{
+          text-decoration: none;
+          opacity: 0.75;
+          margin: 0 15px;
+          color: white;
+          cursor: pointer;
+      }
+      a:hover{
+          opacity: 1;
+      }
+      a.btn{
+          border-radius: 4px;
+          text-transform: uppercase;
+          font-weight: bold;
+          text-align: center;
+          background-color: #3f51b5;
+          opacity: 1;
+          margin-top: 10px;
+          color: white
+      }
+      
+      
+      section{
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          padding: 100px;
+      }
+      
+      /*
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      Header Configurations
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      */
+      
+      header{
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 10;
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          -webkit-box-align:center;
+              -ms-flex-align:center;
+                  align-items:center;
+          padding: 35px 100px 0;
+          -webkit-animation: 1s fadein 0.5s forwards;
+                  animation: 1s fadein 0.5s forwards;
+          opacity: 0.5;
+          color: white;
+      }
+      @-webkit-keyframes fadein{
+          100%{
+              opacity: 1;
+          }
+      }
+      @keyframes fadein{
+          100%{
+              opacity: 1;
+          }
+      }
+      
+      header h2{
+          font-family: "Quicksand, sans-serif";
+          color: white;
+      }
+      
+      header nav{
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          margin-right: -15px;
+      }
+      header nav li{
+          margin: 0 15px;
+          color: white;
+      }
+      @media (max-width: 1000px){
+        header{
+          padding: 20px 50px;
+        }
+      }
+      
+      
+      @media (max-width: 700px){
+        header{
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;		
+        }
+      
+        header h2{
+          margin-bottom: 15px;
+        }
+      }
+      
+      
+      
+      /*
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      Cover and Image Animation configuration
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      */
+      .hero{
+          position: relative;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          text-align: center;
+          min-height: 100vh;
+          color: white;
+      }
+      .hero .background-image{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          z-index: -1;
+          background-color: #80a3db;
+          -webkit-animation: 15s change 1s forwards;
+                  animation: 15s change 1s forwards;
+          -webkit-animation-iteration-count:infinite;
+                  animation-iteration-count:infinite;
+      }
+      
+      @keyframes change{
+          0%{
+          background-image: url(/images/1.jpg);
+          }
+          25%{
+            background-image: url(/images/2.jpg);
+          }
+          50%{
+              background-image: url(/images/3.jpg);
+              
+          }
+          75%{
+              background-image: url(images/4.jpg);
+              
+          }
+          100%{
+            background-image: url(images/5.jpg);
+              
+          }
+      }
+      .hero h1{
+          font: bold 60px "Open Sans", sans-serif;
+          margin-bottom: 40px;
+          color: white;
+      }
+      .hero h3{
+          font: normal 28px "Open Sans", sans-serif;
+          margin-bottom: 40px;
+          color: white;
+      }
+      .hero a.btn{
+          padding: 20px 46px;
+      }
+      .hero-content-area{
+          opacity: 0;
+          margin-top: 100px;
+          -webkit-animation: 1s slidefade 1s forwards;
+                  animation: 1s slidefade 1s forwards;
+      }
+      @-webkit-keyframes slidefade{
+          100%{
+              opacity: 1;
+              margin: 0;
+          }
+      }
+      @keyframes slidefade{
+          100%{
+              opacity: 1;
+              margin: 0;
+          }
+      }
+      
+      
+      .grid{
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+      }
+      
+      hr{
+          width: 100%;
+          height: 2px;
+          background-color: #3f51b5;
+          border: 0;
+          margin-bottom: 50px;
+      }
+      
+      
+      
+      @media (max-width: 800px){
+      
+        .hero{
+          min-height: 600px;
+        }
+        .hero h1{
+          font-size: 48px;
+        }
+      
+        .hero h3{
+          font-size: 24px;
+        }
+      
+        .hero a.btn{
+          padding: 15px 40px;
+        }
+      
+      }
+      
+      
+      /*
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+      Section Configurations
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      */
+      section h3.title{
+          text-transform: capitalize;
+          font: bold 32px "Open Sans", sans-serif;
+          margin-bottom: 30px;
+          text-align: center;
+      }
+      
+      
+      .destinations .grid li{
+          height: 350px;
+          padding: 20px;
+          background-clip: content-box;
+          background-size: cover;
+          background-position: center;
+      }
+      
+      .destinations .grid li.small{
+          -ms-flex-preferred-size: 30%;
+              flex-basis: 30%;
+      }
+      
+      .destnations .grid li.large{
+          -ms-flex-preferred-size: 70%;
+              flex-basis: 70%;
+      }
+      
+      
+      
+      
+      
+      
+      
+      /*---------------------
+         Contact Section
+      ---------------------*/
+      
+      .contact{
+        background-color: #f7f7f7;
+      }
+      
+      .contact form{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+      
+        max-width: 800px;
+        width: 80%;
+      }
+      
+      .contact form input{
+        padding: 15px;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        margin-right: 30px;
+        font-size: 18px;
+        color: #555;
+      }
+      
+      .contact form .btn{
+        padding: 18px 42px;
+      }
+      
+      
+      @media (max-width: 800px){
+      
+        .contact form input{
+          -ms-flex-preferred-size: 100%;
+              flex-basis: 100%;
+          margin: 0 0 20px 0;
+        }
+      
+      }
+      
+      
+      
+      
+      /*-------------
+         Footer
+      -------------*/
+      
+      footer{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        text-align: center;
+        color: #fff;
+        background-color: #414a4f;
+        padding: 60px 0;
+      }
+      
+      footer ul{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-bottom: 25px;
+        font-size: 32px;
+      }
+      
+      footer ul li{
+        margin: 0 8px;	
+      }
+      
+      footer ul li:first-child{
+        margin-left: 0;	
+      }
+      
+      footer ul li:last-child{
+        margin-right: 0;	
+      }
+      
+      footer p{
+        text-transform: uppercase;
+        font-size: 14px;
+        color: rgba(255,255,255,0.6);
+        margin-bottom: 10px;
+      }
+      
+      footer p a{
+        color: #fff;
+      }
+      
+      @media (max-width: 700px){
+      
+        footer{
+          padding: 80px 15px;
+        }
+      
+      }
+     </style>
+    
+    </head>
+    <body>
+      <header>
+        <h2 href="#"> ITM CHEF</h2>
+        <nav>
+            <li><a href="/order">User</a> </li> 
+            <li><a href="/chef/chefLogin">Chef</a> </li>
+            <li><a href="#">Admin</a> </li>
+            
+        </nav>
+      </header>
+          
+      <section class="hero">
+        <div class="background-image" style="background-image: url(/images/1.jpg)"></div>
+          <div class="hero-content-area">
+            <!-- <h1>ITM Chef</h1>
+            <h3>Kha Mt Lena</h3> -->
+          </div>
+          
+      </section>
+      
+      <section class="destinations">
+        <h3 class="title">Home Page Nahi Dekha Kya </h3>
+        <!-- Card -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+
+              <!-- Card image -->
+              <div class="view overlay">
+                <img class="card-img-top" src="/images/s1.png" alt="Card image cap">
+                <a href="/order">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            
+              <!-- Card content -->
+              <div class="card-body">
+                <h4 class="card-title">User Panel</h4>
+                <a href="/order" style="float: right !important;" class="btn btn-primary">View</a>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+
+              <!-- Card image -->
+              <div class="view overlay">
+                <img class="card-img-top" src="/images/s2.png" alt="Card image cap">
+                <a href="/chef/chefLogin">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            
+              <!-- Card content -->
+              <div class="card-body">
+                <h4 class="card-title">Chef Panel</h4>
+                <a href="/chef/chefLogin" style="float: right !important;" class="btn btn-primary">View</a>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+
+              <!-- Card image -->
+              <div class="view overlay">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+                <a href="#!" style="float: right !important;">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+            
+              <!-- Card content -->
+              <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <a href="#" class="btn btn-primary">Button</a>
+              </div>
+              
+            </div>
+          </div>
+        </div>        
+      </section>
+      
+    </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/assets/uploads/fevicon/fevicon.ico">
+    <title>Order</title>
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+
+    <!-- Theme Links -->
+    <link href="/assets/front/css/main.css" rel="stylesheet">
+    <link href="/assets/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/pnotify/dist/pnotify-all.css" rel="stylesheet">
+    <style>
+        html {
+          scroll-behavior: smooth;
+        }
+        .theiaStickySidebar:after {content: ""; display: table; clear: both;}
+    </style>
+    
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <!--Header Food Court Navbar Section-->
+        <div class="navbar-wrapper">
+            <nav class="navbar navbar-static-top ct-navbar-statictop navbar-secondary">
+                <div class="container">
+                    <div class="row">
+                        <div class="ct-logo">
+                            <div class="navbar-header ct-toggle2">
+                                <button type="button" class="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#ct-bootstrap-offcanvas">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                </button>
+                                
+                                <!-- <a class="navbar-brand" href="index.html"><img class="img-responsive flogo" src="/assets/uploads/logo/second_site_logo.png" alt="FoodCourt"> -->
+                                <p style="color: white;font-size: 20px;font-weight: 800;">ITM <br> Chef</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ct-navbar">
+                            <div class="navbar-offcanvas navbar-offcanvas-touch navbar-right" id="ct-bootstrap-offcanvas">
+                                <ul class="nav navbar-nav ct-list">
+                              
+                                    <li><a href="/order">Menu</a></li>
+                                    <li><a href="/order/orderCart">Order Summary</a></li>
+                                    <li><a href="contact-us.html">Check Status</a></li>
+                                    <li><a class="btn btn nav-btn" href="javascript:void(0);" onclick="show_popup('login')">Login</a></li>
+                                  
+                                    <li class="hidden-xs">
+                                        <a class="nav-cart" href="menu.html"><span><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        
+                                        <span id="items_cnt" class="fc-count">0</span>
+                                        
+                                        </span> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--Header Close Food Court Navbar Section-->
+
+        <div class="container pt-8 pb-8">
+
+            <div class="row" >
+                <!-- Left Box -->
+                <div class="col-sm-3 hidden-xs">
+                    <div class="left-sidebox">
+                        
+                        <div class="search cs-searchbox mb-2" >
+                            <div class="search-innerwrapper">
+                                <div class="category-title mb-2">Food Categories</div>
+                            </div>
+                        </div>
+                        
+                        <div class="list-group" id="menu">
+                            
+                            
+                            <a href="javascript:void(0);" class="list-group-item FoodCat" id="">Food Categories :</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- Left Box Close -->
+
+                <!--Middle Box ITEMS DIV-->
+                <div class="col-sm-6 items-block">
+                    <div class="wrapper">
+                        <div class="section">
+                            <div class="category-title mb-2">Food Items </div>
+                            <div class="row" id="products">
+                                <div class="col-sm-12">
+                                    <center>
+                                        <h3>choose a category</h3>
+                                    </center>
+                                </div>
+                            </div>                  
+                        </div>
+                    </div>
+                </div>
+                <!--Middle Box Close ITEMS DIV-->
+
+                <!-- Right Box CART DIV-->
+                <div class="col-sm-3" id="item-sidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                    <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;">
+                        <div class="cs-card cart-card card-y-auto ml-lg-2 item-sidebar">
+                            <div class="card-header bordered">Your cart</div>
+
+                            <div id="fc-cart-div">
+                                <div >
+                                    <div class="cs-card-content card-items-list">
+                                        <ul class="list-left-right" id="cart">
+                                             <h5>No items in your cart</h5>
+                                        </ul>
+                                    </div>
+                                    <div class="cs-card-content">
+                                        <ul class="list-left-right cart-total-details">
+                                            <li class="clearfix">
+                                                <div class="list-left">Total</div>
+                                                <div class="list-right" id="totalCart">0 ₹ </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="p-20">
+                                       
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <div class="checkout-btn">
+                                <button id="submit" class="btn btn-primary btn-block btn-checkout">Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!--Right Box Close CART DIV-->
+            </div>
+        </div>
+
+
+
+
+<!-- 
+        <div class="row">
+            <div style="width: 70%">
+                <div id="menu" class="container" style="width: 90%; margin-top: 100px">
+                        <center>
+                            <h1>Loading...</h1>
+                        </center>
+                </div>
+                <div id="products" class="container" style="width: 90%; margin-top: 100px">
+                    <center>
+                        <h3>choose a category</h3>
+                    </center>
+                </div>
+            </div>
+            <div style="width:30%;">
+                <h4 style="margin-left: 30%; margin-top:4%;">Your Cart</h4>
+
+                <div id="cart" style="width:300px;margin-top: 20px;overflow-y: scroll; height:90%;">
+
+                </div>
+
+                <div>
+                    <button id="submit" style="margin-left: 30%;margin-right: 70%;">Order</button>
+                </div>
+            </div>
+        </div> 
+     -->
+        <!-- Footer -->
+        <footer class="ct-footer" style="margin-top: 50px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+                        <!-- <img class="img-responsive footer-logo" src="/assets/uploads/logo/second_site_logo.png" alt="FoodCourt"> -->
+                        <p style="color: white;font-size: 20px;font-weight: 800;">ITM <br> Chef</p>
+                        <p class="footer-text">We are the world class food providers with the highest quality of food services</p>
+
+                        <div class="ct-social">
+                            <a href="https://en-gb.facebook.com/login/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/login" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href="https://www.tumblr.com/login" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                            <a href="https://in.pinterest.com/login/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/uas/login" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                        <h4 class="footer-head">Accepted Payments</h4>
+                        <ul class="cs-footer-links">
+                         <li class="dropdown ct-lang">
+                            <img width="48px" height="24px" src="/assets/uploads/card_images/thumbs/card_226.png">
+                        </li>
+                        <li class="dropdown ct-lang">
+                            <img width="48px" height="24px" src="/assets/uploads/card_images/thumbs/card_879.png">
+                        </li>
+                        <li class="dropdown ct-lang">
+                            <img width="48px" height="24px" src="/assets/uploads/card_images/thumbs/card_941.png">
+                        </li>
+                        <li class="dropdown ct-lang">
+                            <img width="48px" height="24px" src="/assets/uploads/card_images/thumbs/card_957.png">
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6">
+                        <h4 class="footer-head">Our Links</h4>
+                        <ul class="cs-footer-links">
+                            <li><a href="index.html">Home</a>
+                            </li>
+                            <li><a href="faqs">FAQs</a>
+                            </li>
+                            <li><a href="contact-us.html">Contact Us</a>
+                            </li>
+                            <li><a href="site-map.html">Site map</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6">
+                        <h4 class="footer-head">Our Links</h4>
+                        <ul class="cs-footer-links">
+                            <li><a href="about-us.html">About Us</a>
+                            </li>
+
+                            <li><a href="how-it-works.html">How it works</a>
+                            </li>
+
+                            <li><a href="terms-conditions.html">Terms conditions</a>
+                            </li>
+
+                            <li><a href="privacy-policy.html">Privacy policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="media cs-media">
+                            <div class="media-left ct-icon-font">
+                                <a href="contact-us.html"><i class="fa fa fa-clock-o" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="media-body ct-media-bodys">
+                                <h4 class="media-heading">OPENING TIME</h4>
+                                <p> <i class="fa fa-clock-o" aria-hidden="true"></i> 11:00 - 23:59</p>
+                            </div>
+                        </div>
+                        <div class="media cs-media">
+                            <div class="media-left ct-icon-font">
+                                <a href="contact-us.html"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="media-body ct-media-bodys">
+                                <h4 class="media-heading">Call us</h4>
+                                <p>123456789</p>
+                            </div>
+                        </div>
+                        <div class="media cs-media">
+                            <div class="media-left ct-icon-font">
+                                <a href="#" target="_blank"> 
+                                 <i class="fa fa-android" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                             <div class="media-body ct-media-bodys">
+                                <h4>For Android</h4>
+                                <p>Visit Playstore Store</p>
+                            </div>
+                        </div>
+                        <div class="media cs-media">
+                            <div class="media-left ct-icon-font">
+                               <a href="#" target="_blank">
+                                 <i class="fa fa-apple" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="media-body ct-media-bodys">
+                                <h4>For IOS</h4>
+                                <p>Visit Apple Store</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <section class="ct-subfoot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="copy-text">© ITMCS2015 Restaurant 2019. All Rights Reserved.</div>
+                    </div>
+
+                    <div class="col-sm-6 hidden-xs">
+                        <ul class="copyright-links">
+
+                            <li class="dropdown ct-lang">
+                                <a href="#" onclick="show_popup('login')" class="dropdown-toggle ct-toggle ct-padding"> Login </a>
+                            </li>
+                            <li class="dropdown ct-lang">
+                                <a href="#" onclick="show_popup('signup')" class="dropdown-toggle ct-toggle ct-padding"> Register </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer Close -->
+    </div>
+
+   
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/socket.io-1.3.7.js"></script>
+    <script src="/javascripts/sweetalert2.js"></script>
+    <script src="/javascripts/order/order.js"></script>
+<!-- 
+
+<script src="/assets/front/js/bootstrap.min.js"></script>
+<script src="/assets/front/js/search-box.js"></script>
+<script src="/assets/front/js/bootstrap.offcanvas.js"></script>
+<script type="text/javascript" src="/assets/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="/assets/pnotify/dist/pnotify.js"></script>
+<script type="text/javascript" src="/assets/pnotify/dist/pnotify.animate.js"></script>
+<script type="text/javascript" src="/assets/pnotify/dist/pnotify.buttons.js"></script>
+<script type="text/javascript" src="/assets/pnotify/dist/pnotify.callbacks.js"></script>
+<script type="text/javascript" src="/assets/pnotify/dist/pnotify.confirm.js"></script>
+<script type="text/javascript" src="/assets/pnotify/dist/pnotify.desktop.js"></script>
+
+<script src="/assets/front/js/ResizeSensor.min.js" type="text/javascript"></script> -->
+<script src="/assets/front/js/theia-sticky-sidebar.min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        
+    
+$('document').ready(function(){
+    $('#item-sidebar').theiaStickySidebar({
+        additionalMarginTop: 30
+    });
+
+});
+
+    </script>
+
+</body>
+</html>
